@@ -3,13 +3,25 @@ package com.webla.spring.annotations.search.student;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component("apStudentsService")
+@Scope(value = "singleton")
 public class ApStudentsService implements StudentService{
 
+    @Value("${ap.admin.phonenumber}")
+    private String number;
+    
+	public ApStudentsService() {
+		System.out.println("Test Load");
+		
+	}
 	@Override
 	public List<Student> loadData() {
+		System.out.println("Number "+number);
+		
 		List<Student> studens = new ArrayList<>();
 		
 		Student student1 = new Student(1001, "Sunil", 60);

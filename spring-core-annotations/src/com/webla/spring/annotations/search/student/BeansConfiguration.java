@@ -7,11 +7,7 @@ import org.springframework.context.annotation.PropertySources;
 
 @Configuration
 @ComponentScan(basePackages = "com.webla.spring.annotations.search.student")
-
-@PropertySources({
-    @PropertySource("classpath:admininfo.properties"),
-    @PropertySource("classpath:databaseconfig.properties")
-})
+@PropertySource(value = "classpath:admininfo.properties")
 public class BeansConfiguration {
 
 }

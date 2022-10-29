@@ -10,8 +10,8 @@ import java.util.stream.Collectors;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
-@Component("tnStudentsService")
-public class TnStudentsService implements StudentService{
+@Component("tsStudentsService")
+public class TsStudentsService implements StudentService{
 
 	@Override
 	public List<Student> loadData() {
@@ -19,10 +19,11 @@ public class TnStudentsService implements StudentService{
 		//Connecting to TN XML Servr and reads the data
 		Set<Student> studens = new HashSet();
 		
-		Student student1 = new Student(9999, "TN Sunil", 90);
-		Student student2 = new Student(9998, "TN Vishwa", 85);
-		Student student3 = new Student(9997, "TN Anil", 70);
-		Student student4 = new Student(9996, "TN Mithra", 80);
+		//TS Student API
+		Student student1 = new Student(8888, "TS Sunil", 90);
+		Student student2 = new Student(8887, "TS Vishwa", 85);
+		Student student3 = new Student(8886, "TS Anil", 70);
+		Student student4 = new Student(8885, "TS Mithra", 80);
 		
 		studens.add(student1);
 		studens.add(student2);

@@ -1,5 +1,7 @@
 package com.webla.spring.annotations.search.student;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,21 +18,42 @@ public class StudentClient {
     @Value("${admin.mail}")
 	private String mail;
 
+    @Value("${ap.admin.phonenumber}")
+    private String apPhoneNumber;
     
-    @Value("${database.type}")
-    private String databaseValue;
+    @Value("${tn.admin.phonenumber}")
+    private String tnPhoneNumber;
     
-	@Autowired
-	@Qualifier("apStudentsService")
-	private StudentService studentService;
+    @Value("${ts.admin.phonenumber}")
+    private String tsPhoneNumber;
+    
 
+	/*
+	 * @Autowired
+	 * 
+	 * @Qualifier("apStudentsService") private StudentService studentService;
+	 */
+
+	@Autowired
+	@Qualifier("tnStudentsService")
+	private StudentService tnStudentService;
+
+	@Autowired
+	@Qualifier("tsStudentsService")
+	private StudentService tsStudentService;
+
+	
 	public void displayEligibleColleges(int rollNumber) {
 		
-		
-	    List<Student> studens = studentService.loadData();
+	    List<Student> allStudents = new ArrayList<>();
+	    
+	   // allStudents.addAll(studentService.loadData());
+	    allStudents.addAll(tnStudentService.loadData());
+	    allStudents.addAll(tsStudentService.loadData());
+
 	    
 	    boolean isAvailable =  false;
-	    for (Student student : studens) {
+	    for (Student student : allStudents) {
 			if(student.getRollNumber() == rollNumber) {
 				isAvailable = true;
 				System.out.println("Your Rollnumber found "+rollNumber);
@@ -48,8 +71,11 @@ public class StudentClient {
 		}
 	    
 	    if(!isAvailable) {
-	    	System.out.println("your data is not available with us pleas contact admin team "+phoneNumber+" Mail "+mail);
-	    	System.out.println("databaseValue "+databaseValue);
+	    	//System.out.println("For AP College related Queries Contact ph. "+apPhoneNumber);
+	    	System.out.println("For TN College related Queries Contact ph. "+tnPhoneNumber);
+	    	System.out.println("For TS College related Queries Contact ph. "+tsPhoneNumber);
+
+	    	
 	    }
 	}
 	

@@ -10,7 +10,7 @@ public class ClientTest {
 
 		ApplicationContext  applicationContext = new AnnotationConfigApplicationContext(BeansConfiguration.class);
 		StudentClient client = applicationContext.getBean("studentClient", StudentClient.class);
-		client.displayEligibleColleges(1007);
-	}
+		client.displayEligibleColleges(1001);
+	} 
 }
 
