@@ -13,16 +13,20 @@
   <absolute-ordering/>
   
   <servlet>
-  	<servlet-name>hotel-controller</servlet-name>
+  	<servlet-name>university-app</servlet-name>
   	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  	<init-param>
+  		<param-name>contextConfigLocation</param-name>
+  		<param-value>WEB-INF/appspringbeans.xml</param-value>
+  	</init-param>
   	<load-on-startup>1</load-on-startup>
   </servlet>
   
   
   <servlet-mapping>
-  	<servlet-name>hotel-controller</servlet-name>
-  	<url-pattern>/myhotel.com/*</url-pattern>
+  	<servlet-name>university-app</servlet-name>
+  	<url-pattern>/onboard/*</url-pattern>
   </servlet-mapping>
-  
+ 
   
 </web-app>
