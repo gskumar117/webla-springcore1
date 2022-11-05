@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,9 +15,9 @@
 	<br>
 	<form action="search">
 		<div align="center">
-			<label>Roll Number : </label> <input type="text" name="rollNumber"
-				placeholder="Enter Your RollNumber"> <input type="submit"
-				value="search">
+				<label>Roll Number : </label>
+				<input type="text" name="rollNumber" placeholder="Enter Your RollNumber">
+				<input type="submit" value="search">
 		</div>
 	</form>
 
