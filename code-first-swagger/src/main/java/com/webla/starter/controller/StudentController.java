@@ -35,9 +35,10 @@ public class StudentController {
 	
 	
 	@DeleteMapping("/list")
-	public String saveStudents(@RequestParam("id") String id){
+	public String saveStudents
+	   (@RequestParam(value = "id", required = false, defaultValue = "CURRENTLOCATION") String id){
 		//List<Student> studentsList = new ArrayList<>();
-		System.out.println("Im Here..inPOST Method");
+		System.out.println("Im Here..in DELETE Method");
 		return "SUCCESS";
 	}
 	
