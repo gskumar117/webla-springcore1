@@ -3,7 +3,7 @@ USE `WEBLA_SPRING`;
 drop table employee;
 
 create table employee(
-id int,
+employee_id int primary key,
 name varchar(20)
 )
 
@@ -11,7 +11,7 @@ name varchar(20)
 #Setting Up ID Generation
 
 create table employee(
-id int PRIMARY KEY AUTO_INCREMENT,
+employee_id int PRIMARY KEY AUTO_INCREMENT,
 name varchar(20)
 )
 
@@ -23,10 +23,9 @@ gen_name varchar(60) PRIMARY KEY,
 gen_val int(20)
 )
 
-
 drop table employee;
 
 create table employee(
-id int,
+employee_id int,
 name varchar(20)
 )
